@@ -49,7 +49,7 @@ filters.forEach(btn=>{
         }
     taskbox.innerHTML = li|| `<span>You Don't have any task here</span>`;
  }
- showToDoList(all);
+ showToDoList("all");
 
  clearAll.addEventListener("click",()=>{
     todos.splice(0, todos.length);
@@ -57,7 +57,7 @@ filters.forEach(btn=>{
     showToDoList("all");
  })
 //step 5
-function deleteTask(deletedId){
+function deleteTask(deletedId, filter){
     todos.splice(deletedId,1);
     localStorage.setItem("todo-list", JSON.stringify(todos));
     showToDoList("all");
